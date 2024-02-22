@@ -23,10 +23,7 @@ public class Reserve {
     // Метод для добавления нового животного в реестр
     
 
-    public void addAnimal(Animal animal) throws Exception {
-        try(AnimalCounter counter = new AnimalCounter()){
-            counter.add();
-        }
+    public void addAnimal(Animal animal) {
         animals.add(animal);
         animalCounter++;
     }
@@ -82,7 +79,7 @@ public class Reserve {
     }
 
     // Метод для создания животного на основе ввода пользователя
-    private Animal createAnimalFromUserInput() {
+    private Animal createAnimalFromUserInput() throws Exception {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter nickname: ");
         String name = scanner.nextLine();
@@ -90,7 +87,9 @@ public class Reserve {
         String type = scanner.nextLine();
         System.out.print("Enter birthdate (YYYY-MM-DD): ");
         Date birthDate = parseDate(scanner.nextLine());
-        
+        try(AnimalCounter counter = new AnimalCounter()){
+            counter.add();
+        }
         switch (type.toLowerCase()) {
             case "dog":
                 return new Dog(name, birthDate);
