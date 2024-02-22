@@ -1,6 +1,10 @@
 public class AnimalCounter implements AutoCloseable {
     private int animals_amount;
 
+    public AnimalCounter() {
+        this.animals_amount = 0;
+    }
+
     public void add() {
         animals_amount++;
     }
@@ -9,6 +13,5 @@ public class AnimalCounter implements AutoCloseable {
     }
     @Override
     public void close() throws Exception {
-        throw new UnsupportedOperationException("error: unable to add animal");
     }
 }
