@@ -83,7 +83,7 @@ public class Reserve {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter nickname: ");
         String name = scanner.nextLine();
-        System.out.print("Enter type (Cat / Dog / Hamster / Horse / Camel / Donkey : ");
+        System.out.print("Enter type (Cat / Dog / Hamster / Horse / Camel / Donkey ) ");
         String type = scanner.nextLine();
         System.out.print("Enter birthdate (YYYY-MM-DD): ");
         Date birthDate = parseDate(scanner.nextLine());
